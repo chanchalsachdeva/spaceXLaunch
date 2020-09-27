@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-2">
+    <h5>Filters</h5>
+    <p class="left-space">Launch Year</p>
+    <div class="row button-class-right">
+      <div *ngFor="let year of years" class="col-lg-6 col-md-12 col-6" (click)="getFilterData('','',year)">
+        <div class="circleColor"> {{year}} </div>
+      </div>
+    </div>
+    <p class="left-space">Successful Launch</p>
+    <div class="row button-class-right">
+      <div *ngFor="let val of launch_val" class="col-lg-6 col-md-12 col-6" (click)="getFilterData(val,'','')">
+        <div class="circleColor">{{val}}</div>
+      </div>
+    </div>
+    <p class="left-space">Successful Landing</p>
+    <div class="row button-class-right">
+      <div *ngFor="let val of land_val" class="col-lg-6 col-md-12 col-6" (click)="getFilterData('',val,'')">
+        <div class="circleColor"> {{val}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-10">
+    <div class="row right-data" *ngIf="spaceData">
+      <div *ngFor="let data of spaceData" class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card-view-data">
+          <figure>
+            <img src={{data.links.mission_patch_small}} alt="spaceImage" style="width:100%">
+            <figcaption>
+              {{data.mission_name}} #{{data.flight_number}}
+            </figcaption>
+          </figure>
+          <div *ngIf="data.mission_id.length > 0">Mission Ids</div>
+          <ul *ngIf="data.mission_id.length > 0">
+            <li *ngFor="let id of data.mission_id">
+              <span>{{id}}</span>
+            </li>
+          </ul>
+          <div>
+            Launch year :{{data.launch_year}}
+          </div>
+          <div>
+            Successful Launch :{{data.launch_success? true : false}}
+          </div>
+          <div>
+            Successful Landing :{{data.launch_landing ? true : false}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="spaceData == 0">
+      <div class="col-sm-12">
+        <h4 style="text-align: center; padding: 30px 0;">No data found</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="loader"></app-spinner>

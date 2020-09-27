@@ -1,0 +1,51 @@
+.row{
+    margin: 0px auto;
+}
+.left-space{
+    border-bottom: 1px solid #798d90;
+    text-align: center;
+}
+.circleColor{
+    margin-bottom: 10px;
+    background-color: #e9ecef;;
+    padding:  3px 11px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;;
+}
+figcaption{
+    color:#071011;
+    font-weight: 600;
+}
+.button-class-right .col-lg-6:nth-child(even){
+    text-align: 680;
+}
+.card-view-data{
+    padding: 20px;
+    background:#f8f9fa;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    height: 100%;
+    border-radius: 5px;
+}
+.right-data .col-lg-3{
+    margin:15px 0px;
+}
+.right-data .col-lg-3 img{
+    margin:0 auto 20px;
+    width: 80%;
+    display: block;
+}
+.right-data .col-lg-3 h6 span{
+   color:#e9ecef;;
+}
+@media (min-width:768px){
+    .button-class-right .button{
+        text-align: center;
+        width:100% !important;
+    }
+}
+@media (min-width:320px){
+    .button-class-right .button{
+        text-align: center;
+        width:100% !important;
+    }
+}

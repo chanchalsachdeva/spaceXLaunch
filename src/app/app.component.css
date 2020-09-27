@@ -1,0 +1,14 @@
+.header{
+    background-color: #cccccc;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.footer{
+    background-color: #cccccc;
+    padding: 4px;
+    text-align: center;
+}
+* {
+    font-family: georgia,garamond,serif;
+  } 
