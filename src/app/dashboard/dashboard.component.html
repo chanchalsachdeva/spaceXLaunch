@@ -3,19 +3,19 @@
     <h5>Filters</h5>
     <p class="left-space">Launch Year</p>
     <div class="row button-class-right">
-      <div *ngFor="let year of years" class="col-lg-6 col-md-12 col-6" (click)="getFilterData('','',year)">
+      <div *ngFor="let year of years" class="col-lg-6 col-md-12 col-6" (click)="getSpaceData('','',year)">
         <div class="circleColor"> {{year}} </div>
       </div>
     </div>
     <p class="left-space">Successful Launch</p>
     <div class="row button-class-right">
-      <div *ngFor="let val of launch_val" class="col-lg-6 col-md-12 col-6" (click)="getFilterData(val,'','')">
+      <div *ngFor="let val of launch_val" class="col-lg-6 col-md-12 col-6" (click)="getSpaceData(val,'','')">
         <div class="circleColor">{{val}}</div>
       </div>
     </div>
     <p class="left-space">Successful Landing</p>
     <div class="row button-class-right">
-      <div *ngFor="let val of land_val" class="col-lg-6 col-md-12 col-6" (click)="getFilterData('',val,'')">
+      <div *ngFor="let val of land_val" class="col-lg-6 col-md-12 col-6" (click)="getSpaceData('',val,'')">
         <div class="circleColor"> {{val}}</div>
       </div>
     </div>

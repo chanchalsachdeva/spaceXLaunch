@@ -19,10 +19,14 @@ export class DashboardComponent implements OnInit {
   constructor(public _dashboardService: DashboardProviderService) { }
 
   ngOnInit(): void {
-    this.getSpaceData();
+    this.getSpaceData('','','');
   }
 
-  getSpaceData() {
+  getSpaceData(launch_bool_val, land_bool_val, launch_year) {
+    console.log(launch_year + " " + launch_bool_val + " " + land_bool_val);
+    this.launch_year = launch_year;
+    this.launch_bool_val = launch_bool_val;
+    this.land_bool_val = land_bool_val;
     this.loader = true;
     this._dashboardService.getData(this.launch_bool_val, this.land_bool_val, this.launch_year).subscribe(
       data => {
@@ -33,20 +37,6 @@ export class DashboardComponent implements OnInit {
       err => console.error(err),
       () => console.log('done loading data')
     );
-  }
-
-  getFilterData(launch_bool_val, land_bool_val, launch_year) {
-    console.log(launch_year + " " + launch_bool_val + " " + land_bool_val);
-    this.launch_year = launch_year;
-    this.launch_bool_val = launch_bool_val;
-    this.land_bool_val = land_bool_val;
-    this.loader = true;
-    this._dashboardService.getData(this.launch_bool_val, this.land_bool_val, this.launch_year).subscribe(data => {
-      this.loader = false;
-      this.spaceData = data;
-      console.log(data);
-    }, err => console.error(err),
-      () => console.log('done filter'));
   }
 
 }
